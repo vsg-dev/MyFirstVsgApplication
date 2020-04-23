@@ -22,7 +22,7 @@ This is very early days for this little example so it's only tested under Linux 
 
 To run pass the 3d model to load via the command line:
 
-    bin/myfirstvsgapplication modules/lz.vsgt
+    bin/myfirstvsgapplication models/lz.vsgt
 
 If you build just the VulkanSceneGrah then you'll only be able to load VulkanSceneGraph native .vsgt and .vsgb files, but if you've built and installed [osg2vsg](https://github.com/vsg-dev/osg2vsg) and [vsgXchange](https://github.com/vsg-dev/vsgXchange) prior to build MyFirstVsgApplication cmake will automatically find these and add the required links and C++ to leverage all the loaders provided by the OpenSceneGraph and vsgXchange.
 
