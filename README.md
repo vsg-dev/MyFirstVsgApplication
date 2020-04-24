@@ -13,7 +13,7 @@ Very simple crossplatform CMake, C++17 project to illustrate how to build a [Vul
 
 ## Windows build:
 
-    According to community feedback It's working fine under Windows, but we're waiting on a Windows expert to volunteer an explanation, in the meantime have a look through the [VulkanSceneGraph/INSTALL.md](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/INSTALL.md#detailed-instructions-for-setting-up-your-environment-and-building-for-microsoft-windows).
+According to community feedback It's working fine under Windows, but we're waiting on a Windows expert to volunteer an explanation, in the meantime have a look through the [VulkanSceneGraph/INSTALL.md](https://github.com/vsg-dev/VulkanSceneGraph/blob/master/INSTALL.md#detailed-instructions-for-setting-up-your-environment-and-building-for-microsoft-windows).
 
 ## Running the MyFirstVsgApplication program:
 
