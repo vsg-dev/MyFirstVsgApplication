@@ -35,7 +35,6 @@ add_custom_target(clobber
 )
 
 set(SOURCES
-    src/AnimationPath.cpp
     src/main.cpp
 )
 

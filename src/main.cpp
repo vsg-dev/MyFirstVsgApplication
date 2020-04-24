@@ -2,14 +2,11 @@
 
 #ifdef USE_VSGXCHANGE
 #include <vsgXchange/ReaderWriter_all.h>
-#include <vsgXchange/ShaderCompiler.h>
 #endif
 
 #include <iostream>
 #include <chrono>
 #include <thread>
-
-#include "AnimationPath.h"
 
 int main(int argc, char** argv)
 {
@@ -24,7 +21,6 @@ int main(int argc, char** argv)
     windowTraits->apiDumpLayer = arguments.read({"--api","-a"});
     if (arguments.read({"--fullscreen", "--fs"})) windowTraits->fullscreen = true;
     if (arguments.read({"--window", "-w"}, windowTraits->width, windowTraits->height)) { windowTraits->fullscreen = false; }
-    auto pathFilename = arguments.value(std::string(),"-p");
     auto horizonMountainHeight = arguments.value(-1.0, "--hmh");
     auto useDatabasePager = arguments.read("--pager");
     auto maxPageLOD = arguments.value(-1, "--max-plod");
@@ -38,48 +34,42 @@ int main(int argc, char** argv)
     options->readerWriter = vsgXchange::ReaderWriter_all::create();
 #endif
 
-    using VsgNodes = std::vector<vsg::ref_ptr<vsg::Node>>;
-    VsgNodes vsgNodes;
+    std::vector<vsg::ref_ptr<vsg::Node>> nodes;
 
-    vsg::Path path;
-
-    // read any vsg files
+    // read any vsg files from command line arguments
     for (int i=1; i<argc; ++i)
     {
         vsg::Path filename = arguments[i];
 
-        path = vsg::filePath(filename);
-
         auto loaded_scene = vsg::read_cast<vsg::Node>(filename, options);
         if (loaded_scene)
         {
-            vsgNodes.push_back(loaded_scene);
+            nodes.push_back(loaded_scene);
             arguments.remove(i, 1);
             --i;
         }
     }
 
-    // assign the vsg_scene from the loaded nodes
-    vsg::ref_ptr<vsg::Node> vsg_scene;
-    if (vsgNodes.size()>1)
+    // assign the scene from the loaded nodes
+    vsg::ref_ptr<vsg::Node> scene;
+    if (nodes.size()>1)
     {
         auto vsg_group = vsg::Group::create();
-        for(auto& subgraphs : vsgNodes)
+        for(auto& subgraphs : nodes)
         {
             vsg_group->addChild(subgraphs);
         }
 
-        vsg_scene = vsg_group;
+        scene = vsg_group;
     }
-    else if (vsgNodes.size()==1)
+    else if (nodes.size()==1)
     {
-        vsg_scene = vsgNodes.front();
+        scene = nodes.front();
     }
 
-
-    if (!vsg_scene)
+    if (!scene)
     {
-        std::cout<<"No command graph created."<<std::endl;
+        std::cout<<"No scene loaded, please specify 3d model on command line."<<std::endl;
         return 1;
     }
 
@@ -99,7 +89,7 @@ int main(int argc, char** argv)
 
     // compute the bounds of the scene graph to help position camera
     vsg::ComputeBounds computeBounds;
-    vsg_scene->accept(computeBounds);
+    scene->accept(computeBounds);
     vsg::dvec3 centre = (computeBounds.bounds.min+computeBounds.bounds.max)*0.5;
     double radius = vsg::length(computeBounds.bounds.max-computeBounds.bounds.min)*0.6;
     double nearFarRatio = 0.0001;
@@ -119,39 +109,21 @@ int main(int argc, char** argv)
 
     auto camera = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(window->extent2D()));
 
-    // set up database pager
-    vsg::ref_ptr<vsg::DatabasePager> databasePager;
-    if (useDatabasePager)
-    {
-        databasePager = vsg::DatabasePager::create();
-        if (maxPageLOD>=0) databasePager->targetMaxNumPagedLODWithHighResSubgraphs = maxPageLOD;
-    }
+    // set up database pager if required
+    auto databasePager = vsg::DatabasePager::create_if(useDatabasePager);
+    if (databasePager  && maxPageLOD>=0) databasePager->targetMaxNumPagedLODWithHighResSubgraphs = maxPageLOD;
 
     // add close handler to respond the close window button and pressing escape
     viewer->addEventHandler(vsg::CloseHandler::create(viewer));
 
-    if (pathFilename.empty())
-    {
-        viewer->addEventHandler(vsg::Trackball::create(camera));
-    }
-    else
-    {
-        std::ifstream in(pathFilename);
-        if (!in)
-        {
-            std::cout << "AnimationPat: Could not open animation path file \"" << pathFilename << "\".\n";
-            return 1;
-        }
+    // add a trackball event handler to control the camera view
+    viewer->addEventHandler(vsg::Trackball::create(camera));
 
-        vsg::ref_ptr<vsg::AnimationPath> animationPath(new vsg::AnimationPath);
-        animationPath->read(in);
-
-        viewer->addEventHandler(vsg::AnimationPathHandler::create(camera, animationPath, viewer->start_point()));
-    }
-
-    auto commandGraph = vsg::createCommandGraphForView(window, camera, vsg_scene);
+    // create a command graph to render the scene on specified window
+    auto commandGraph = vsg::createCommandGraphForView(window, camera, scene);
     viewer->assignRecordAndSubmitTaskAndPresentation({commandGraph}, databasePager);
 
+    // compile all the the Vulkan objects and transfer data required to render the scene
     viewer->compile();
 
     // rendering main loop
