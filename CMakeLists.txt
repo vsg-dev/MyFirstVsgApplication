@@ -29,9 +29,14 @@ find_package(vsgXchange QUIET)
 # set the use of C++17 globally as all examples require it
 set(CMAKE_CXX_STANDARD 17)
 
+# add clobber build target to clear all the non git registered files/directories
+add_custom_target(clobber
+    COMMAND git clean -d -f -x
+)
+
 set(SOURCES
-    AnimationPath.cpp
-    main.cpp
+    src/AnimationPath.cpp
+    src/main.cpp
 )
 
 add_executable(myfirstvsgapplication ${SOURCES})
@@ -42,3 +47,8 @@ if (vsgXchange_FOUND)
     target_compile_definitions(myfirstvsgapplication PRIVATE USE_VSGXCHANGE)
     target_link_libraries(myfirstvsgapplication vsgXchange::vsgXchange)
 endif()
+
+install(TARGETS myfirstvsgapplication
+        RUNTIME DESTINATION bin
+)
+
