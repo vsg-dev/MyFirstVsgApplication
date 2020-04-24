@@ -50,20 +50,8 @@ int main(int argc, char** argv)
 
     // assign the scene from the loaded nodes
     vsg::ref_ptr<vsg::Node> scene;
-    if (nodes.size()>1)
-    {
-        auto vsg_group = vsg::Group::create();
-        for(auto& subgraphs : nodes)
-        {
-            vsg_group->addChild(subgraphs);
-        }
-
-        scene = vsg_group;
-    }
-    else if (nodes.size()==1)
-    {
-        scene = nodes.front();
-    }
+    if (nodes.size()>1) scene = vsg::Group::create(nodes.begin(), nodes.end());
+    else if (nodes.size()==1) scene = nodes.front();
 
     if (!scene)
     {
