@@ -18,7 +18,7 @@ This is very early days for this little example so it's only tested under Linux 
     Please help port this application to Windows and provide text to go here :-)
 
 
-## Runing the MyFirstVsgApplication program:
+## Running the MyFirstVsgApplication program:
 
 To run pass the 3d model to load via the command line:
 
