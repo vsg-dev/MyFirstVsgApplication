@@ -98,6 +98,9 @@ int main(int argc, char** argv)
     vsg::ref_ptr<vsg::ProjectionMatrix> perspective;
     if (horizonMountainHeight >= 0.0)
     {
+        // EllipsoidPerspective is useful for or whole earth databases where per frame managmenet of the camera's near & far values are optimized
+        // to the current view relative to an ellipsoid model the earth so that the when near to the earth the near and far planes are pulled in close to the eye
+        // and when far away fom the earth surface the far plane is pushed out to ensure that it encompasses the horizon line, acounting for mountaints over the horizon.
         perspective = vsg::EllipsoidPerspective::create(lookAt, vsg::EllipsoidModel::create(), 30.0, static_cast<double>(window->extent2D().width) / static_cast<double>(window->extent2D().height), nearFarRatio, horizonMountainHeight);
     }
     else
@@ -111,10 +114,10 @@ int main(int argc, char** argv)
     auto databasePager = vsg::DatabasePager::create_if(useDatabasePager);
     if (databasePager  && maxPageLOD>=0) databasePager->targetMaxNumPagedLODWithHighResSubgraphs = maxPageLOD;
 
-    // add close handler to respond the close window button and pressing escape
+    // add close handler to respond to pressing the window close window button and pressing escape
     viewer->addEventHandler(vsg::CloseHandler::create(viewer));
 
-    // add a trackball event handler to control the camera view
+    // add a trackball event handler to control the camera view use the mouse
     viewer->addEventHandler(vsg::Trackball::create(camera));
 
     // create a command graph to render the scene on specified window
