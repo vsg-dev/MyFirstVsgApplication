@@ -19,7 +19,7 @@ int main(int argc, char** argv)
     windowTraits->apiDumpLayer = arguments.read({"--api","-a"});
     if (arguments.read({"--fullscreen", "--fs"})) windowTraits->fullscreen = true;
     if (arguments.read({"--window", "-w"}, windowTraits->width, windowTraits->height)) { windowTraits->fullscreen = false; }
-    auto horizonMountainHeight = arguments.value(-1.0, "--hmh");
+    auto horizonMountainHeight = arguments.value(0.0, "--hmh");
     auto useDatabasePager = arguments.read("--pager");
     auto maxPageLOD = arguments.value(-1, "--max-plod");
     arguments.read("--screen", windowTraits->screenNum);
@@ -84,12 +84,12 @@ int main(int argc, char** argv)
     auto lookAt = vsg::LookAt::create(centre+vsg::dvec3(0.0, -radius*3.5, 0.0), centre, vsg::dvec3(0.0, 0.0, 1.0));
 
     vsg::ref_ptr<vsg::ProjectionMatrix> perspective;
-    if (horizonMountainHeight >= 0.0)
+    if (vsg::ref_ptr<vsg::EllipsoidModel> ellipsoidModel(scene->getObject<vsg::EllipsoidModel>("EllipsoidModel")); ellipsoidModel)
     {
         // EllipsoidPerspective is useful for or whole earth databases where per frame managmenet of the camera's near & far values are optimized
         // to the current view relative to an ellipsoid model the earth so that the when near to the earth the near and far planes are pulled in close to the eye
         // and when far away fom the earth surface the far plane is pushed out to ensure that it encompasses the horizon line, acounting for mountaints over the horizon.
-        perspective = vsg::EllipsoidPerspective::create(lookAt, vsg::EllipsoidModel::create(), 30.0, static_cast<double>(window->extent2D().width) / static_cast<double>(window->extent2D().height), nearFarRatio, horizonMountainHeight);
+        perspective = vsg::EllipsoidPerspective::create(lookAt, ellipsoidModel, 30.0, static_cast<double>(window->extent2D().width) / static_cast<double>(window->extent2D().height), nearFarRatio, horizonMountainHeight);
     }
     else
     {
