@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.7)
 
 project(MyFirstVsgApplication
         VERSION 0.0.0
-        DESCRIPTION "Set of example programs that test and illustrate how to use the Vulkan/VkSceneGraph"
-        LANGUAGES CXX C
+        DESCRIPTION "Example programs provide template of how to create a program using VulkanSceneGraph and CMake"
+        LANGUAGES CXX
 )
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules;${CMAKE_MODULE_PATH}")
