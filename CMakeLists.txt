@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.7)
 
 project(MyFirstVsgApplication
         VERSION 0.0.0
-        DESCRIPTION "Example programs provide template of how to create a program using VulkanSceneGraph and CMake"
+        DESCRIPTION "Template of how to create a program using VulkanSceneGraph and CMake"
         LANGUAGES CXX
 )
 
