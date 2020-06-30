@@ -20,8 +20,6 @@ int main(int argc, char** argv)
     if (arguments.read({"--fullscreen", "--fs"})) windowTraits->fullscreen = true;
     if (arguments.read({"--window", "-w"}, windowTraits->width, windowTraits->height)) { windowTraits->fullscreen = false; }
     auto horizonMountainHeight = arguments.value(0.0, "--hmh");
-    auto useDatabasePager = arguments.read("--pager");
-    auto maxPageLOD = arguments.value(-1, "--max-plod");
     arguments.read("--screen", windowTraits->screenNum);
     arguments.read("--display", windowTraits->display);
 
@@ -98,10 +96,6 @@ int main(int argc, char** argv)
 
     auto camera = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(window->extent2D()));
 
-    // set up database pager if required
-    auto databasePager = vsg::DatabasePager::create_if(useDatabasePager);
-    if (databasePager  && maxPageLOD>=0) databasePager->targetMaxNumPagedLODWithHighResSubgraphs = maxPageLOD;
-
     // add close handler to respond to pressing the window close window button and pressing escape
     viewer->addEventHandler(vsg::CloseHandler::create(viewer));
 
@@ -110,7 +104,7 @@ int main(int argc, char** argv)
 
     // create a command graph to render the scene on specified window
     auto commandGraph = vsg::createCommandGraphForView(window, camera, scene);
-    viewer->assignRecordAndSubmitTaskAndPresentation({commandGraph}, databasePager);
+    viewer->assignRecordAndSubmitTaskAndPresentation({commandGraph});
 
     // compile all the the Vulkan objects and transfer data required to render the scene
     viewer->compile();
