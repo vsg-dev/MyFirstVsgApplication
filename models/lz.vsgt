@@ -1863,6 +1863,7 @@ void main()
             binding 1
             format 103
             offset 0
+            NumNames 0
           }
           PipelineState id=25 vsg::InputAssemblyState
           {
@@ -1907,6 +1908,7 @@ void main()
             stencilTestEnable 0
           }
           subpass 0
+          ArrayMapping id=0
         }
       }
     }
@@ -25512,6 +25514,7 @@ void main()
             binding 2
             format 103
             offset 0
+            NumNames 0
           }
           PipelineState id=53 vsg::InputAssemblyState
           {
@@ -25556,6 +25559,7 @@ void main()
             stencilTestEnable 0
           }
           subpass 0
+          ArrayMapping id=0
         }
       }
     }
@@ -36854,6 +36858,7 @@ void main()
             binding 3
             format 106
             offset 0
+            NumNames 0
           }
           PipelineState id=707 vsg::InputAssemblyState
           {
@@ -36898,6 +36903,7 @@ void main()
             stencilTestEnable 0
           }
           subpass 0
+          ArrayMapping id=0
         }
       }
     }

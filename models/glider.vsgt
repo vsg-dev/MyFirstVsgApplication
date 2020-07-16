@@ -28,7 +28,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 294
               Data 0.3915 0.9346 0.0526 0.358 1 0.0315 0.3326 1 0.0299 0.3455 0.9265 0.0508
                0.3615 0.8 0.0517 0.2923 1 0.0256 0.3106 0.8 0.0511 0.3312 0.7 0.0497
@@ -109,7 +109,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 294
               Data -0.0842952 0.266485 0.960146 -0.0618021 0.27751 0.958733 -0.0621008 0.263303 0.962712 -0.0840976 0.138596 0.986772
                -0.0120002 -0.00430008 0.999919 -0.103496 0.239091 0.965466 -0.0332004 0.0086001 0.999412 0.0141003 -0.0235006 0.999624
@@ -190,7 +190,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 1
               Data 0.351 0.2558 0.7322 1
             }
@@ -198,7 +198,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 1560
               Data 0 1 2 3 0 2 4 0 3 3 2 5
                6 4 3 7 4 6 8 3 5 6 3 8
@@ -351,7 +351,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data 0.0332 0 -0.0014 -0.0076 0.0855 -0.2328 0.0322 0.002 -0.0006 -0.0088 0.0835 -0.2333
                -0.0086 0.0875 -0.2319 0.032 -0.002 -0.002 0.0293 0.0034 0.0005 -0.0119 0.0821 -0.2333
@@ -364,7 +364,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data 0.984816 0 -0.173603 0.984816 0 -0.173603 0.729012 0.673811 0.120502 0.64387 -0.673769 -0.362583
                0.729012 0.673811 0.120502 0.64387 -0.673769 -0.362583 0.346287 0.898167 0.27089 0.23279 -0.89816 -0.372984
@@ -377,7 +377,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 1
               Data 0.8 0.8 0.8 1
             }
@@ -385,7 +385,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 72
               Data 0 1 2 3 1 0 1 4 2 5 3 0
                2 4 6 7 3 5 4 8 6 9 7 5
@@ -414,7 +414,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data 0.0332 0 -0.0014 -0.0076 -0.0855 -0.2328 0.032 0.002 -0.002 -0.0086 -0.0875 -0.2319
                -0.0088 -0.0835 -0.2333 0.0322 -0.002 -0.0006 0.0289 0.0034 -0.0019 -0.0115 -0.0889 -0.2309
@@ -427,7 +427,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data 0.984816 0 -0.173603 0.984816 0 -0.173603 0.64387 0.673769 -0.362583 0.729012 -0.673811 0.120502
                0.64387 0.673769 -0.362583 0.729012 -0.673811 0.120502 0.23279 0.89816 -0.372984 0.346287 -0.898167 0.27089
@@ -440,7 +440,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 1
               Data 0.8 0.8 0.8 1
             }
@@ -448,7 +448,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 72
               Data 0 1 2 3 1 0 1 4 2 5 3 0
                2 4 6 7 3 5 4 8 6 9 7 5
@@ -477,7 +477,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data -0.0135 0.0833 -0.2301 -0.0135 -0.0833 -0.2301 -0.0139 0.0833 -0.2311 -0.0136 -0.0833 -0.2291
                -0.0139 -0.0833 -0.2311 -0.0136 0.0833 -0.2291 -0.0148 0.0833 -0.2317 -0.0142 -0.0833 -0.2282
@@ -490,7 +490,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data 0.984816 0 -0.173603 0.984816 0 -0.173603 0.76602 0 -0.642817 0.9397 0 0.342
                0.76602 0 -0.642817 0.9397 0 0.342 0.342 0 -0.9397 0.642817 0 0.76602
@@ -503,7 +503,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 1
               Data 0.8 0.8 0.8 1
             }
@@ -511,7 +511,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 72
               Data 0 1 2 3 1 0 1 4 2 5 3 0
                2 4 6 7 3 5 4 8 6 9 7 5
@@ -540,7 +540,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data 0.0083 0 0.0167 0.0083 0 0.225 0.0072 -0.0021 0.0167 0.0072 0.0021 0.225
                0.0072 -0.0021 0.225 0.0072 0.0021 0.0167 0.0042 -0.0036 0.0167 0.0042 0.0036 0.225
@@ -553,7 +553,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data 1 0 0 1 0 0 0.697036 -0.717037 0 0.697036 0.717037 0
                0.697036 -0.717037 0 0.697036 0.717037 0 0.294002 -0.955805 0 0.294002 0.955805 0
@@ -566,7 +566,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 1
               Data 0.8 0.8 0.8 1
             }
@@ -574,7 +574,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 72
               Data 0 1 2 3 1 0 1 4 2 5 3 0
                2 4 6 7 3 5 4 8 6 9 7 5
@@ -603,7 +603,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data -0.1667 0 -0.0042 0.4583 0 -0.0042 -0.1667 -0.0021 -0.0036 0.4583 0.0021 -0.0036
                0.4583 -0.0021 -0.0036 -0.1667 0.0021 -0.0036 -0.1667 -0.0036 -0.0021 0.4583 0.0036 -0.0021
@@ -616,7 +616,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 24
               Data 0 0 -1 0 0 -1 0 -0.500011 -0.866019 0 0.500011 -0.866019
                0 -0.500011 -0.866019 0 0.500011 -0.866019 0 -0.866019 -0.500011 0 0.866019 -0.500011
@@ -629,7 +629,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 1
               Data 0.8 0.8 0.8 1
             }
@@ -637,7 +637,7 @@ Root id=1 vsg::CullGroup
             {
               NumUserObjects 0
               Format 0
-              Layout 0 1 1 1
+              Layout 0 1 1 1 0
               Size 72
               Data 0 1 2 3 1 0 1 4 2 5 3 0
                2 4 6 7 3 5 4 8 6 9 7 5
@@ -1010,6 +1010,7 @@ void main()
             binding 2
             format 109
             offset 0
+            NumNames 0
           }
           PipelineState id=50 vsg::InputAssemblyState
           {
@@ -1054,6 +1055,7 @@ void main()
             stencilTestEnable 0
           }
           subpass 0
+          ArrayMapping id=0
         }
       }
     }
