@@ -1010,7 +1010,6 @@ void main()
             binding 2
             format 109
             offset 0
-            NumNames 0
           }
           PipelineState id=50 vsg::InputAssemblyState
           {
@@ -1055,7 +1054,6 @@ void main()
             stencilTestEnable 0
           }
           subpass 0
-          ArrayMapping id=0
         }
       }
     }
