@@ -41,7 +41,7 @@ add_executable(myfirstvsgapplication ${SOURCES})
 target_link_libraries(myfirstvsgapplication vsg::vsg)
 
 if (vsgXchange_FOUND)
-    target_compile_definitions(myfirstvsgapplication PRIVATE USE_VSGXCHANGE)
+    target_compile_definitions(myfirstvsgapplication PRIVATE vsgXchange_FOUND)
     target_link_libraries(myfirstvsgapplication vsgXchange::vsgXchange)
 endif()
 

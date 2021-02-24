@@ -1,7 +1,7 @@
 #include <vsg/all.h>
 
-#ifdef USE_VSGXCHANGE
-#include <vsgXchange/ReaderWriter_all.h>
+#ifdef vsgXchange_FOUND
+#include <vsgXchange/all.h>
 #endif
 
 #include <iostream>
@@ -25,9 +25,9 @@ int main(int argc, char** argv)
 
     if (arguments.errors()) return arguments.writeErrorMessages(std::cerr);
 
-#ifdef USE_VSGXCHANGE
+#ifdef VSGXCHANGE_all
     // add use of vsgXchange's support for reading and writing 3rd party file formats
-    options->add(vsgXchange::ReaderWriter_all::create());
+    options->add(vsgXchange::all::create());
 #endif
 
     std::vector<vsg::ref_ptr<vsg::Node>> nodes;
