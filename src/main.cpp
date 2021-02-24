@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 
     if (arguments.errors()) return arguments.writeErrorMessages(std::cerr);
 
-#ifdef VSGXCHANGE_all
+#ifdef vsgXchange_all
     // add use of vsgXchange's support for reading and writing 3rd party file formats
     options->add(vsgXchange::all::create());
 #endif
