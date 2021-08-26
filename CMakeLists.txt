@@ -27,10 +27,10 @@ find_package(vsgXchange QUIET)
 # set the use of C++17 globally as all examples require it
 set(CMAKE_CXX_STANDARD 17)
 
-# add clobber build target to clear all the non git registered files/directories
-add_custom_target(clobber
-    COMMAND git clean -d -f -x
-)
+setup_build_vars()
+setup_dir_vars()
+
+add_target_clobber()
 
 set(SOURCES
     src/main.cpp
