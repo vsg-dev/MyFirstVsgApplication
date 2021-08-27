@@ -30,7 +30,21 @@ set(CMAKE_CXX_STANDARD 17)
 setup_build_vars()
 setup_dir_vars()
 
+add_target_clang_format(
+    FILES
+        src/*.cpp
+        src/*.h
+)
 add_target_clobber()
+add_target_cppcheck(
+    FILES
+        src/
+)
+add_target_docs(
+    FILES
+        src/
+)
+add_target_uninstall()
 
 set(SOURCES
     src/main.cpp
@@ -48,4 +62,6 @@ endif()
 install(TARGETS myfirstvsgapplication
         RUNTIME DESTINATION bin
 )
+
+add_feature_summary()
 
