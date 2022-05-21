@@ -30,33 +30,26 @@ int main(int argc, char** argv)
     options->add(vsgXchange::all::create());
 #endif
 
-    std::vector<vsg::ref_ptr<vsg::Node>> nodes;
+    auto scene = vsg::Group::create();
 
     // read any vsg files from command line arguments
     for (int i=1; i<argc; ++i)
     {
         vsg::Path filename = arguments[i];
-
         auto loaded_scene = vsg::read_cast<vsg::Node>(filename, options);
         if (loaded_scene)
         {
-            nodes.push_back(loaded_scene);
+            scene->addChild(loaded_scene);
             arguments.remove(i, 1);
             --i;
         }
     }
 
-    // assign the scene from the loaded nodes
-    vsg::ref_ptr<vsg::Node> scene;
-    if (nodes.size()>1) scene = vsg::Group::create(nodes.begin(), nodes.end());
-    else if (nodes.size()==1) scene = nodes.front();
-
-    if (!scene)
+    if (scene->children.empty())
     {
         std::cout<<"No scene loaded, please specify 3d model on command line."<<std::endl;
         return 1;
     }
-
 
     // create the viewer and assign window(s) to it
     auto viewer = vsg::Viewer::create();
