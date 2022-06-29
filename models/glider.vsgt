@@ -1,35 +1,35 @@
-#vsga 0.4.0
+#vsga 0.4.3
 Root id=1 vsg::Group
 {
-  NumUserObjects 1
-  Key "Name"
-  Object id=2 vsg::stringValue
+  userObjects 1
+  key "Name"
+  object id=2 vsg::stringValue
   {
-    NumUserObjects 0
+    userObjects 0
     Layout 0 0 0 1 1 1 0 -1
     Value "glider.osg"
   }
   children 6
   vsg::Node id=3 vsg::CullNode
   {
-    NumUserObjects 0
+    userObjects 0
     bound 0.102 0 0.0146 1.04181
     child id=4 vsg::StateGroup
     {
-      NumUserObjects 0
+      userObjects 0
       children 1
       vsg::Node id=5 vsg::VertexIndexDraw
       {
-        NumUserObjects 0
+        userObjects 0
         firstBinding 0
         NumArrays 3
         Array id=6 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 546
-          Storage id=0
-          Data 0.3326 -1 0.0299 0.358 -1 0.0315 0.3455 -0.9265 0.0508 0.3915 -0.9346 0.0526
+          size 546
+          storage id=0
+          data 0.3326 -1 0.0299 0.358 -1 0.0315 0.3455 -0.9265 0.0508 0.3915 -0.9346 0.0526
            0.3106 -0.8 0.0511 0.3615 -0.8 0.0517 0.2759 -0.7 0.0505 0.3312 -0.7 0.0497
            0.2439 -0.6 0.0492 0.3034 -0.6 0.0468 0.2144 -0.5 0.0471 0.278 -0.5 0.0429
            0.1925 -0.4 0.0443 0.2602 -0.4 0.038 0.1705 -0.3 0.0406 0.2422 -0.3 0.0321
@@ -169,11 +169,11 @@ Root id=1 vsg::Group
         }
         Array id=7 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 546
-          Storage id=0
-          Data -0.0621008 -0.263303 0.962712 -0.0618021 -0.27751 0.958733 -0.0840976 -0.138596 0.986772 -0.0391013 -0.00180006 0.999234
+          size 546
+          storage id=0
+          data -0.0621008 -0.263303 0.962712 -0.0618021 -0.27751 0.958733 -0.0840976 -0.138596 0.986772 -0.0391013 -0.00180006 0.999234
            -0.0332004 -0.0086001 0.999412 -0.0120001 0.0156001 0.999806 -0.00709966 0.00679967 0.999952 0.0140993 0.0330984 0.999353
            0.0190992 0.022799 0.999558 0.0402988 0.0492986 0.997971 0.0452008 0.0363007 0.998318 0.066303 0.0608028 0.995945
            0.0712996 0.0480997 0.996294 0.0922982 0.0752985 0.99288 0.0972955 0.0614971 0.993354 0.118105 0.0897037 0.988941
@@ -313,19 +313,19 @@ Root id=1 vsg::Group
         }
         Array id=8 vsg::vec4Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 16 0 1 1 1 0 -1
-          Size 1
-          Storage id=0
-          Data 0.351 0.2558 0.7322 1
+          size 1
+          storage id=0
+          data 0.351 0.2558 0.7322 1
         }
         Indices id=9 vsg::ushortArray
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 2 0 1 1 1 0 -1
-          Size 1560
-          Storage id=0
-          Data 0 1 2 1 3 2 2 3 4 3 5 4
+          size 1560
+          storage id=0
+          data 0 1 2 1 3 2 2 3 4 3 5 4
            4 5 6 5 7 6 6 7 8 7 9 8
            8 9 10 9 11 10 10 11 12 11 13 12
            12 13 14 13 15 14 14 15 16 15 17 16
@@ -465,22 +465,22 @@ Root id=1 vsg::Group
       stateCommands 1
       vsg::StateCommand id=10 vsg::BindGraphicsPipeline
       {
-        NumUserObjects 0
+        userObjects 0
         slot 0
         pipeline id=11 vsg::GraphicsPipeline
         {
-          NumUserObjects 0
+          userObjects 0
           layout id=12 vsg::PipelineLayout
           {
-            NumUserObjects 0
-            Flags 0
-            NumDescriptorSetLayouts 1
-            DescriptorSetLayout id=13 vsg::DescriptorSetLayout
+            userObjects 0
+            flags 0
+            setLayouts 1
+            descriptorLayout id=13 vsg::DescriptorSetLayout
             {
-              NumUserObjects 0
-              NumDescriptorSetLayoutBindings 0
+              userObjects 0
+              bindings 0
             }
-            NumPushConstantRanges 1
+            pushConstantRanges 1
             stageFlags 1
             offset 0
             size 128
@@ -488,13 +488,14 @@ Root id=1 vsg::Group
           stages 2
           vsg::ShaderStage id=14 vsg::ShaderStage
           {
-            NumUserObjects 0
+            userObjects 0
             stage 1
             entryPointName "main"
             module id=15 vsg::ShaderModule
             {
-              NumUserObjects 0
-              Source "#version 450
+              userObjects 0
+              hints id=0
+              source "#version 450
 #pragma import_defines ( VSG_NORMAL, VSG_TANGENT, VSG_COLOR, VSG_TEXCOORD0, VSG_LIGHTING, VSG_NORMAL_MAP, VSG_BILLBOARD, VSG_TRANSLATE )
 #define VSG_NORMAL
 #define VSG_COLOR
@@ -604,73 +605,21 @@ void main()
 }
 
 "
-              hints id=0
-              SPIRVSize 628
-              SPIRV 119734787 65536 524298 92 0 131089 1 393227 1 1280527431 1685353262 808793134
-               0 196622 0 1 851983 0 4 1852399981 0 21 29 42
-               52 58 80 88 90 196611 2 450 589828 1096764487 1935622738 1918988389
-               1600484449 1684105331 1868526181 1667590754 29556 262149 4 1852399981 0 327685 10 1701080941
-               1701402220 119 393221 11 1752397136 1936617283 1953390964 115 393222 11 0 1785688688
-               1769235301 28271 393222 11 1 1701080941 1701402220 119 196613 13 25456 393221
-               19 1348430951 1700164197 2019914866 0 393222 19 0 1348430951 1953067887 7237481 196613
-               21 0 327685 29 1600615279 1953654102 30821 196613 40 110 327685 42
-               1600615279 1836216142 27745 327685 52 1836216174 1766091873 114 262149 55 1936683116 0
-               262149 58 2003134838 7498052 327685 80 1751607660 1919501428 0 327685 88 1953654134
-               1869377347 114 327685 90 1600615279 1869377347 114 262216 11 0 5 327752
-               11 0 35 0 327752 11 0 7 16 262216 11 1
-               5 327752 11 1 35 64 327752 11 1 7 16 196679
-               11 2 327752 19 0 11 0 196679 19 2 262215 29
-               30 0 262215 42 30 1 262215 52 30 1 262215 58
-               30 5 262215 80 30 6 262215 88 30 3 262215 90
-               30 3 131091 2 196641 3 2 196630 6 32 262167 7
-               6 4 262168 8 7 4 262176 9 7 8 262174 11
-               8 8 262176 12 9 11 262203 12 13 9 262165 14
-               32 1 262187 14 15 1 262176 16 9 8 196638 19
-               7 262176 20 3 19 262203 20 21 3 262187 14 22
-               0 262167 27 6 3 262176 28 1 27 262203 28 29
-               1 262187 6 31 1065353216 262176 37 3 7 262176 39 7
-               27 262203 28 42 1 262187 6 44 0 262176 51 3
-               27 262203 51 52 3 262176 54 7 7 262187 6 56
-               1048576000 458796 7 57 44 56 31 44 262203 51 58 3
-               262165 71 32 0 262187 71 72 3 262176 73 7 6
-               131092 76 262203 51 80 3 262203 37 88 3 262176 89
-               1 7 262203 89 90 1 327734 2 4 0 3 131320
-               5 262203 9 10 7 262203 39 40 7 262203 54 55
-               7 327745 16 17 13 15 262205 8 18 17 196670 10
-               18 327745 16 23 13 22 262205 8 24 23 262205 8
-               25 10 327826 8 26 24 25 262205 27 30 29 327761
-               6 32 30 0 327761 6 33 30 1 327761 6 34
-               30 2 458832 7 35 32 33 34 31 327825 7 36
-               26 35 327745 37 38 21 22 196670 38 36 262205 8
-               41 10 262205 27 43 42 327761 6 45 43 0 327761
-               6 46 43 1 327761 6 47 43 2 458832 7 48
-               45 46 47 44 327825 7 49 41 48 524367 27 50
-               49 49 0 1 2 196670 40 50 262205 27 53 40
-               196670 52 53 196670 55 57 262205 8 59 10 262205 27
-               60 29 327761 6 61 60 0 327761 6 62 60 1
-               327761 6 63 60 2 458832 7 64 61 62 63 31
-               327825 7 65 59 64 327761 6 66 65 0 327761 6
-               67 65 1 327761 6 68 65 2 393296 27 69 66
-               67 68 262271 27 70 69 196670 58 70 327745 73 74
-               55 72 262205 6 75 74 327860 76 77 75 44 196855
-               79 0 262394 77 78 83 131320 78 262205 7 81 55
-               524367 27 82 81 81 0 1 2 196670 80 82 131321
-               79 131320 83 262205 7 84 55 524367 27 85 84 84
-               0 1 2 262205 27 86 58 327809 27 87 85 86
-               196670 80 87 131321 79 131320 79 262205 7 91 90 196670
-               88 91 65789 65592
+              code 0
+              
             }
             NumSpecializationConstants 0
           }
           vsg::ShaderStage id=16 vsg::ShaderStage
           {
-            NumUserObjects 0
+            userObjects 0
             stage 16
             entryPointName "main"
             module id=17 vsg::ShaderModule
             {
-              NumUserObjects 0
-              Source "#version 450
+              userObjects 0
+              hints id=0
+              source "#version 450
 #pragma import_defines ( VSG_NORMAL, VSG_COLOR, VSG_TEXCOORD0, VSG_LIGHTING, VSG_MATERIAL, VSG_DIFFUSE_MAP, VSG_OPACITY_MAP, VSG_AMBIENT_MAP, VSG_NORMAL_MAP, VSG_SPECULAR_MAP )
 #define VSG_NORMAL
 #define VSG_COLOR
@@ -777,80 +726,15 @@ void main()
 }
 
 "
-              hints id=0
-              SPIRVSize 775
-              SPIRV 119734787 65536 524298 124 0 131089 1 393227 1 1280527431 1685353262 808793134
-               0 196622 0 1 655375 4 4 1852399981 0 14 32 38
-               42 115 196624 4 7 196611 2 450 589828 1096764487 1935622738 1918988389
-               1600484449 1684105331 1868526181 1667590754 29556 262149 4 1852399981 0 262149 9 1702060386
-               0 327685 14 1953654134 1869377347 114 393221 19 1768058209 1131703909 1919904879 0
-               393221 22 1717987684 1130722165 1919904879 0 393221 24 1667592307 1918987381 1869377347 114
-               327685 28 1852401779 1936027241 115 262149 30 1919501422 0 327685 32 1836216174
-               1766091873 114 196613 34 25710 196613 37 25708 327685 38 1751607660 1919501428
-               0 196613 41 25718 262149 42 2003134838 7498052 262149 45 1869377379 114
-               262149 62 1717987684 0 262149 88 1718378856 7498052 327685 115 1131705711 1919904879
-               0 262215 14 30 3 262215 32 30 1 262215 38 30
-               6 262215 42 30 5 262215 115 30 0 131091 2 196641
-               3 2 196630 6 32 262167 7 6 4 262176 8 7
-               7 262187 6 10 1065353216 458796 7 11 10 10 10 10
-               262176 13 1 7 262203 13 14 1 262167 17 6 3
-               262176 18 7 17 262187 6 20 1036831949 393260 17 21 20
-               20 20 393260 17 23 10 10 10 262187 6 25 1050253722
-               393260 17 26 25 25 25 262176 27 7 6 262187 6
-               29 1098907648 262176 31 1 17 262203 31 32 1 262203 31
-               38 1 262203 31 42 1 262187 6 46 1008981770 458796 7
-               47 46 46 46 10 262165 52 32 0 262187 52 53
-               0 262187 52 56 1 262187 52 59 2 262187 6 66
-               0 131092 84 262187 52 93 3 262176 114 3 7 262203
-               114 115 3 262176 117 3 6 327734 2 4 0 3
-               131320 5 262203 8 9 7 262203 18 19 7 262203 18
-               22 7 262203 18 24 7 262203 27 28 7 262203 18
-               30 7 262203 18 34 7 262203 18 37 7 262203 18
-               41 7 262203 8 45 7 262203 27 62 7 262203 18
-               88 7 196670 9 11 262205 7 12 9 262205 7 15
-               14 327813 7 16 12 15 196670 9 16 196670 19 21
-               196670 22 23 196670 24 26 196670 28 29 262205 17 33
-               32 196670 30 33 262205 17 35 30 393228 17 36 1
-               69 35 196670 34 36 262205 17 39 38 393228 17 40
-               1 69 39 196670 37 40 262205 17 43 42 393228 17
-               44 1 69 43 196670 41 44 196670 45 47 262205 17
-               48 19 262205 7 49 45 524367 17 50 49 49 0
-               1 2 327809 17 51 50 48 327745 27 54 45 53
-               327761 6 55 51 0 196670 54 55 327745 27 57 45
-               56 327761 6 58 51 1 196670 57 58 327745 27 60
-               45 59 327761 6 61 51 2 196670 60 61 262205 17
-               63 37 262205 17 64 34 327828 6 65 63 64 458764
-               6 67 1 40 65 66 196670 62 67 262205 17 68
-               22 262205 6 69 62 327822 17 70 68 69 262205 7
-               71 45 524367 17 72 71 71 0 1 2 327809 17
-               73 72 70 327745 27 74 45 53 327761 6 75 73
-               0 196670 74 75 327745 27 76 45 56 327761 6 77
-               73 1 196670 76 77 327745 27 78 45 59 327761 6
-               79 73 2 196670 78 79 262205 7 80 9 262205 7
-               81 45 327813 7 82 81 80 196670 45 82 262205 6
-               83 62 327866 84 85 83 66 196855 87 0 262394 85
-               86 87 131320 86 262205 17 89 37 262205 17 90 41
-               327809 17 91 89 90 393228 17 92 1 69 91 196670
-               88 92 327745 27 94 9 93 262205 6 95 94 262205
-               17 96 24 327822 17 97 96 95 262205 17 98 88
-               262205 17 99 34 327828 6 100 98 99 458764 6 101
-               1 40 100 66 262205 6 102 28 458764 6 103 1
-               26 101 102 327822 17 104 97 103 262205 7 105 45
-               524367 17 106 105 105 0 1 2 327809 17 107 106
-               104 327745 27 108 45 53 327761 6 109 107 0 196670
-               108 109 327745 27 110 45 56 327761 6 111 107 1
-               196670 110 111 327745 27 112 45 59 327761 6 113 107
-               2 196670 112 113 131321 87 131320 87 262205 7 116 45
-               196670 115 116 327745 117 118 115 93 262205 6 119 118
-               327860 84 120 119 66 196855 122 0 262394 120 121 122
-               131320 121 65788 131320 122 65789 65592
+              code 0
+              
             }
             NumSpecializationConstants 0
           }
           pipelineStates 6
           vsg::GraphicsPipelineState id=18 vsg::VertexInputState
           {
-            NumUserObjects 0
+            userObjects 0
             NumBindings 3
             binding 0
             stride 12
@@ -877,13 +761,13 @@ void main()
           }
           vsg::GraphicsPipelineState id=19 vsg::InputAssemblyState
           {
-            NumUserObjects 0
+            userObjects 0
             topology 3
             primitiveRestartEnable 0
           }
           vsg::GraphicsPipelineState id=20 vsg::RasterizationState
           {
-            NumUserObjects 0
+            userObjects 0
             depthClampEnable 0
             rasterizerDiscardEnable 0
             polygonMode 0
@@ -897,7 +781,7 @@ void main()
           }
           vsg::GraphicsPipelineState id=21 vsg::MultisampleState
           {
-            NumUserObjects 0
+            userObjects 0
             rasterizationSamples 1
             sampleShadingEnable 0
             minSampleShading 0
@@ -907,7 +791,7 @@ void main()
           }
           vsg::GraphicsPipelineState id=22 vsg::ColorBlendState
           {
-            NumUserObjects 0
+            userObjects 0
             logicOp 3
             logicOpEnable 0
             NumColorBlendAttachments 1
@@ -923,7 +807,7 @@ void main()
           }
           vsg::GraphicsPipelineState id=23 vsg::DepthStencilState
           {
-            NumUserObjects 0
+            userObjects 0
             depthTestEnable 1
             depthWriteEnable 1
             depthCompareOp 4
@@ -954,24 +838,24 @@ void main()
   }
   vsg::Node id=24 vsg::CullNode
   {
-    NumUserObjects 0
+    userObjects 0
     bound 0.0046 0.04275 -0.11565 0.129752
     child id=25 vsg::StateGroup
     {
-      NumUserObjects 0
+      userObjects 0
       children 1
       vsg::Node id=26 vsg::VertexIndexDraw
       {
-        NumUserObjects 0
+        userObjects 0
         firstBinding 0
         NumArrays 3
         Array id=27 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data 0.0332 0 -0.0014 -0.0076 0.0855 -0.2328 0.0322 0.002 -0.0006 -0.0086 0.0875 -0.2319
+          size 26
+          storage id=0
+          data 0.0332 0 -0.0014 -0.0076 0.0855 -0.2328 0.0322 0.002 -0.0006 -0.0086 0.0875 -0.2319
            0.0293 0.0034 0.0005 -0.0115 0.0889 -0.2309 0.0252 0.0039 0.0014 -0.0155 0.0894 -0.23
            0.0211 0.0034 0.0019 -0.0197 0.0889 -0.2294 0.018 0.002 0.002 -0.0228 0.0875 -0.2294
            0.0168 0 0.0014 -0.024 0.0855 -0.2299 0.0178 -0.002 0.0006 -0.023 0.0835 -0.2308
@@ -981,11 +865,11 @@ void main()
         }
         Array id=28 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data 0.984816 0 -0.173603 0.984816 0 -0.173603 0.729012 0.673811 0.120502 0.729012 0.673811 0.120502
+          size 26
+          storage id=0
+          data 0.984816 0 -0.173603 0.984816 0 -0.173603 0.729012 0.673811 0.120502 0.729012 0.673811 0.120502
            0.346287 0.898167 0.27089 0.346287 0.898167 0.27089 0.0594 0.939701 0.3368 0.0594 0.939701 0.3368
            -0.23279 0.89816 0.372984 -0.23279 0.89816 0.372984 -0.64387 0.673769 0.362583 -0.64387 0.673769 0.362583
            -0.984816 0 0.173603 -0.984816 0 0.173603 -0.729012 -0.673811 -0.120502 -0.729012 -0.673811 -0.120502
@@ -995,19 +879,19 @@ void main()
         }
         Array id=29 vsg::vec4Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 16 0 1 1 1 0 -1
-          Size 1
-          Storage id=0
-          Data 0.8 0.8 0.8 1
+          size 1
+          storage id=0
+          data 0.8 0.8 0.8 1
         }
         Indices id=30 vsg::ushortArray
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 2 0 1 1 1 0 -1
-          Size 72
-          Storage id=0
-          Data 0 1 2 1 3 2 2 3 4 3 5 4
+          size 72
+          storage id=0
+          data 0 1 2 1 3 2 2 3 4 3 5 4
            4 5 6 5 7 6 6 7 8 7 9 8
            8 9 10 9 11 10 10 11 12 11 13 12
            12 13 14 13 15 14 14 15 16 15 17 16
@@ -1027,24 +911,24 @@ void main()
   }
   vsg::Node id=31 vsg::CullNode
   {
-    NumUserObjects 0
+    userObjects 0
     bound 0.0046 -0.04275 -0.11565 0.129752
     child id=32 vsg::StateGroup
     {
-      NumUserObjects 0
+      userObjects 0
       children 1
       vsg::Node id=33 vsg::VertexIndexDraw
       {
-        NumUserObjects 0
+        userObjects 0
         firstBinding 0
         NumArrays 3
         Array id=34 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data 0.0332 0 -0.0014 -0.0076 -0.0855 -0.2328 0.032 0.002 -0.002 -0.0088 -0.0835 -0.2333
+          size 26
+          storage id=0
+          data 0.0332 0 -0.0014 -0.0076 -0.0855 -0.2328 0.032 0.002 -0.002 -0.0088 -0.0835 -0.2333
            0.0289 0.0034 -0.0019 -0.0119 -0.0821 -0.2333 0.0248 0.0039 -0.0014 -0.016 -0.0816 -0.2328
            0.0207 0.0034 -0.0005 -0.0201 -0.0821 -0.2318 0.0178 0.002 0.0006 -0.023 -0.0835 -0.2308
            0.0168 0 0.0014 -0.024 -0.0855 -0.2299 0.018 -0.002 0.002 -0.0228 -0.0875 -0.2294
@@ -1054,11 +938,11 @@ void main()
         }
         Array id=35 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data 0.984816 0 -0.173603 0.984816 0 -0.173603 0.64387 0.673769 -0.362583 0.64387 0.673769 -0.362583
+          size 26
+          storage id=0
+          data 0.984816 0 -0.173603 0.984816 0 -0.173603 0.64387 0.673769 -0.362583 0.64387 0.673769 -0.362583
            0.23279 0.89816 -0.372984 0.23279 0.89816 -0.372984 -0.0594 0.939701 -0.3368 -0.0594 0.939701 -0.3368
            -0.346287 0.898167 -0.27089 -0.346287 0.898167 -0.27089 -0.729012 0.673811 -0.120502 -0.729012 0.673811 -0.120502
            -0.984816 0 0.173603 -0.984816 0 0.173603 -0.64387 -0.673769 0.362583 -0.64387 -0.673769 0.362583
@@ -1068,19 +952,19 @@ void main()
         }
         Array id=36 vsg::vec4Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 16 0 1 1 1 0 -1
-          Size 1
-          Storage id=0
-          Data 0.8 0.8 0.8 1
+          size 1
+          storage id=0
+          data 0.8 0.8 0.8 1
         }
         Indices id=37 vsg::ushortArray
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 2 0 1 1 1 0 -1
-          Size 72
-          Storage id=0
-          Data 0 1 2 1 3 2 2 3 4 3 5 4
+          size 72
+          storage id=0
+          data 0 1 2 1 3 2 2 3 4 3 5 4
            4 5 6 5 7 6 6 7 8 7 9 8
            8 9 10 9 11 10 10 11 12 11 13 12
            12 13 14 13 15 14 14 15 16 15 17 16
@@ -1100,24 +984,24 @@ void main()
   }
   vsg::Node id=38 vsg::CullNode
   {
-    NumUserObjects 0
+    userObjects 0
     bound -0.01555 0 -0.22975 0.0833504
     child id=39 vsg::StateGroup
     {
-      NumUserObjects 0
+      userObjects 0
       children 1
       vsg::Node id=40 vsg::VertexIndexDraw
       {
-        NumUserObjects 0
+        userObjects 0
         firstBinding 0
         NumArrays 3
         Array id=41 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data -0.0135 0.0833 -0.2301 -0.0135 -0.0833 -0.2301 -0.0139 0.0833 -0.2311 -0.0139 -0.0833 -0.2311
+          size 26
+          storage id=0
+          data -0.0135 0.0833 -0.2301 -0.0135 -0.0833 -0.2301 -0.0139 0.0833 -0.2311 -0.0139 -0.0833 -0.2311
            -0.0148 0.0833 -0.2317 -0.0148 -0.0833 -0.2317 -0.0159 0.0833 -0.2318 -0.0159 -0.0833 -0.2318
            -0.0169 0.0833 -0.2314 -0.0169 -0.0833 -0.2314 -0.0175 0.0833 -0.2305 -0.0175 -0.0833 -0.2305
            -0.0176 0.0833 -0.2294 -0.0176 -0.0833 -0.2294 -0.0171 0.0833 -0.2284 -0.0171 -0.0833 -0.2284
@@ -1127,11 +1011,11 @@ void main()
         }
         Array id=42 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data 0.984816 0 -0.173603 0.984816 0 -0.173603 0.76602 0 -0.642817 0.76602 0 -0.642817
+          size 26
+          storage id=0
+          data 0.984816 0 -0.173603 0.984816 0 -0.173603 0.76602 0 -0.642817 0.76602 0 -0.642817
            0.342 0 -0.9397 0.342 0 -0.9397 -0.173603 0 -0.984816 -0.173603 0 -0.984816
            -0.642817 0 -0.76602 -0.642817 0 -0.76602 -0.9397 0 -0.342 -0.9397 0 -0.342
            -0.984816 0 0.173603 -0.984816 0 0.173603 -0.76602 0 0.642817 -0.76602 0 0.642817
@@ -1141,19 +1025,19 @@ void main()
         }
         Array id=43 vsg::vec4Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 16 0 1 1 1 0 -1
-          Size 1
-          Storage id=0
-          Data 0.8 0.8 0.8 1
+          size 1
+          storage id=0
+          data 0.8 0.8 0.8 1
         }
         Indices id=44 vsg::ushortArray
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 2 0 1 1 1 0 -1
-          Size 72
-          Storage id=0
-          Data 0 1 2 1 3 2 2 3 4 3 5 4
+          size 72
+          storage id=0
+          data 0 1 2 1 3 2 2 3 4 3 5 4
            4 5 6 5 7 6 6 7 8 7 9 8
            8 9 10 9 11 10 10 11 12 11 13 12
            12 13 14 13 15 14 14 15 16 15 17 16
@@ -1173,24 +1057,24 @@ void main()
   }
   vsg::Node id=45 vsg::CullNode
   {
-    NumUserObjects 0
+    userObjects 0
     bound 0 0 0.12085 0.104565
     child id=46 vsg::StateGroup
     {
-      NumUserObjects 0
+      userObjects 0
       children 1
       vsg::Node id=47 vsg::VertexIndexDraw
       {
-        NumUserObjects 0
+        userObjects 0
         firstBinding 0
         NumArrays 3
         Array id=48 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data 0.0083 0 0.0167 0.0083 0 0.225 0.0072 -0.0021 0.0167 0.0072 -0.0021 0.225
+          size 26
+          storage id=0
+          data 0.0083 0 0.0167 0.0083 0 0.225 0.0072 -0.0021 0.0167 0.0072 -0.0021 0.225
            0.0042 -0.0036 0.0167 0.0042 -0.0036 0.225 0 -0.0042 0.0167 0 -0.0042 0.225
            -0.0042 -0.0036 0.0167 -0.0042 -0.0036 0.225 -0.0072 -0.0021 0.0167 -0.0072 -0.0021 0.225
            -0.0083 0 0.0167 -0.0083 0 0.225 -0.0072 0.0021 0.0167 -0.0072 0.0021 0.225
@@ -1200,11 +1084,11 @@ void main()
         }
         Array id=49 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data 1 0 0 1 0 0 0.697036 -0.717037 0 0.697036 -0.717037 0
+          size 26
+          storage id=0
+          data 1 0 0 1 0 0 0.697036 -0.717037 0 0.697036 -0.717037 0
            0.294002 -0.955805 0 0.294002 -0.955805 0 0 -1 0 0 -1 0
            -0.294002 -0.955805 0 -0.294002 -0.955805 0 -0.697036 -0.717037 0 -0.697036 -0.717037 0
            -1 0 0 -1 0 0 -0.697036 0.717037 0 -0.697036 0.717037 0
@@ -1214,19 +1098,19 @@ void main()
         }
         Array id=50 vsg::vec4Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 16 0 1 1 1 0 -1
-          Size 1
-          Storage id=0
-          Data 0.8 0.8 0.8 1
+          size 1
+          storage id=0
+          data 0.8 0.8 0.8 1
         }
         Indices id=51 vsg::ushortArray
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 2 0 1 1 1 0 -1
-          Size 72
-          Storage id=0
-          Data 0 1 2 1 3 2 2 3 4 3 5 4
+          size 72
+          storage id=0
+          data 0 1 2 1 3 2 2 3 4 3 5 4
            4 5 6 5 7 6 6 7 8 7 9 8
            8 9 10 9 11 10 10 11 12 11 13 12
            12 13 14 13 15 14 14 15 16 15 17 16
@@ -1246,24 +1130,24 @@ void main()
   }
   vsg::Node id=52 vsg::CullNode
   {
-    NumUserObjects 0
+    userObjects 0
     bound 0.1458 0 0 0.312556
     child id=53 vsg::StateGroup
     {
-      NumUserObjects 0
+      userObjects 0
       children 1
       vsg::Node id=54 vsg::VertexIndexDraw
       {
-        NumUserObjects 0
+        userObjects 0
         firstBinding 0
         NumArrays 3
         Array id=55 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data -0.1667 0 -0.0042 0.4583 0 -0.0042 -0.1667 -0.0021 -0.0036 0.4583 -0.0021 -0.0036
+          size 26
+          storage id=0
+          data -0.1667 0 -0.0042 0.4583 0 -0.0042 -0.1667 -0.0021 -0.0036 0.4583 -0.0021 -0.0036
            -0.1667 -0.0036 -0.0021 0.4583 -0.0036 -0.0021 -0.1667 -0.0042 0 0.4583 -0.0042 0
            -0.1667 -0.0036 0.0021 0.4583 -0.0036 0.0021 -0.1667 -0.0021 0.0036 0.4583 -0.0021 0.0036
            -0.1667 0 0.0042 0.4583 0 0.0042 -0.1667 0.0021 0.0036 0.4583 0.0021 0.0036
@@ -1273,11 +1157,11 @@ void main()
         }
         Array id=56 vsg::vec3Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 12 0 1 1 1 0 -1
-          Size 26
-          Storage id=0
-          Data 0 0 -1 0 0 -1 0 -0.500011 -0.866019 0 -0.500011 -0.866019
+          size 26
+          storage id=0
+          data 0 0 -1 0 0 -1 0 -0.500011 -0.866019 0 -0.500011 -0.866019
            0 -0.866019 -0.500011 0 -0.866019 -0.500011 0 -1 0 0 -1 0
            0 -0.866019 0.500011 0 -0.866019 0.500011 0 -0.500011 0.866019 0 -0.500011 0.866019
            0 0 1 0 0 1 0 0.500011 0.866019 0 0.500011 0.866019
@@ -1287,19 +1171,19 @@ void main()
         }
         Array id=57 vsg::vec4Array
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 16 0 1 1 1 0 -1
-          Size 1
-          Storage id=0
-          Data 0.8 0.8 0.8 1
+          size 1
+          storage id=0
+          data 0.8 0.8 0.8 1
         }
         Indices id=58 vsg::ushortArray
         {
-          NumUserObjects 0
+          userObjects 0
           Layout 0 2 0 1 1 1 0 -1
-          Size 72
-          Storage id=0
-          Data 0 1 2 1 3 2 2 3 4 3 5 4
+          size 72
+          storage id=0
+          data 0 1 2 1 3 2 2 3 4 3 5 4
            4 5 6 5 7 6 6 7 8 7 9 8
            8 9 10 9 11 10 10 11 12 11 13 12
            12 13 14 13 15 14 14 15 16 15 17 16
