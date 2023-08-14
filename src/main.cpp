@@ -63,8 +63,7 @@ int main(int argc, char** argv)
 
     viewer->addWindow(window);
 
-
-    // compute the bounds of the scene graph to help position camera
+    // compute the bounds of the scene graph to help position the camera
     vsg::ComputeBounds computeBounds;
     scene->accept(computeBounds);
     vsg::dvec3 centre = (computeBounds.bounds.min+computeBounds.bounds.max)*0.5;
@@ -77,9 +76,9 @@ int main(int argc, char** argv)
     vsg::ref_ptr<vsg::ProjectionMatrix> perspective;
     if (vsg::ref_ptr<vsg::EllipsoidModel> ellipsoidModel(scene->getObject<vsg::EllipsoidModel>("EllipsoidModel")); ellipsoidModel)
     {
-        // EllipsoidPerspective is useful for or whole earth databases where per frame managmenet of the camera's near & far values are optimized
-        // to the current view relative to an ellipsoid model the earth so that the when near to the earth the near and far planes are pulled in close to the eye
-        // and when far away fom the earth surface the far plane is pushed out to ensure that it encompasses the horizon line, acounting for mountaints over the horizon.
+        // EllipsoidPerspective is useful for whole earth databases where per frame management of the camera's near & far values is optimized
+        // to the current view relative to an ellipsoid model of the earth so that when near to the earth the near and far planes are pulled in close to the eye
+        // and when far away fom the earth's surface the far plane is pushed out to ensure that it encompasses the horizon line, acounting for mountains over the horizon.
         perspective = vsg::EllipsoidPerspective::create(lookAt, ellipsoidModel, 30.0, static_cast<double>(window->extent2D().width) / static_cast<double>(window->extent2D().height), nearFarRatio, horizonMountainHeight);
     }
     else
@@ -89,13 +88,13 @@ int main(int argc, char** argv)
 
     auto camera = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(window->extent2D()));
 
-    // add close handler to respond to pressing the window close window button and pressing escape
+    // add close handler to respond to pressing the window's close window button and to pressing escape
     viewer->addEventHandler(vsg::CloseHandler::create(viewer));
 
-    // add a trackball event handler to control the camera view use the mouse
+    // add a trackball event handler to control the camera view using the mouse
     viewer->addEventHandler(vsg::Trackball::create(camera));
 
-    // create a command graph to render the scene on specified window
+    // create a command graph to render the scene on the specified window
     auto commandGraph = vsg::createCommandGraphForView(window, camera, scene);
     viewer->assignRecordAndSubmitTaskAndPresentation({commandGraph});
 
