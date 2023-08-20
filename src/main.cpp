@@ -8,7 +8,6 @@
 
 int main(int argc, char** argv)
 {
-    // set up defaults and read command line arguments to override them
     auto options = vsg::Options::create();
     auto windowTraits = vsg::WindowTraits::create();
     windowTraits->windowTitle = "MyFirstVsgApplication";
@@ -47,7 +46,7 @@ int main(int argc, char** argv)
 
     if (scene->children.empty())
     {
-        std::cout<<"No scene loaded, please specify 3d model on command line."<<std::endl;
+        std::cout<<"No scene loaded, please specify valid 3d model(s) on command line."<<std::endl;
         return 1;
     }
 
@@ -57,7 +56,7 @@ int main(int argc, char** argv)
     vsg::ref_ptr<vsg::Window> window(vsg::Window::create(windowTraits));
     if (!window)
     {
-        std::cout<<"Could not create windows."<<std::endl;
+        std::cout<<"Could not create window."<<std::endl;
         return 1;
     }
 
@@ -78,7 +77,7 @@ int main(int argc, char** argv)
     {
         // EllipsoidPerspective is useful for whole earth databases where per frame management of the camera's near & far values is optimized
         // to the current view relative to an ellipsoid model of the earth so that when near to the earth the near and far planes are pulled in close to the eye
-        // and when far away fom the earth's surface the far plane is pushed out to ensure that it encompasses the horizon line, acounting for mountains over the horizon.
+        // and when far away from the earth's surface the far plane is pushed out to ensure that it encompasses the horizon line, accounting for mountains over the horizon.
         perspective = vsg::EllipsoidPerspective::create(lookAt, ellipsoidModel, 30.0, static_cast<double>(window->extent2D().width) / static_cast<double>(window->extent2D().height), nearFarRatio, horizonMountainHeight);
     }
     else
@@ -98,7 +97,7 @@ int main(int argc, char** argv)
     auto commandGraph = vsg::createCommandGraphForView(window, camera, scene);
     viewer->assignRecordAndSubmitTaskAndPresentation({commandGraph});
 
-    // compile all the the Vulkan objects and transfer data required to render the scene
+    // compile all the Vulkan objects and transfer data required to render the scene
     viewer->compile();
 
     // rendering main loop

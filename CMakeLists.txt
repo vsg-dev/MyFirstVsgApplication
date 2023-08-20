@@ -21,7 +21,7 @@ endif()
 
 find_package(vsg 1.0.0 REQUIRED)
 
-# find the optional vsgXchange that can be used for reading and range of image and 3d model formats and shader compilation
+# find the optional vsgXchange that can be used for reading a range of image and 3d model formats and shader compilation
 find_package(vsgXchange 1.0.0 QUIET)
 
 # set the use of C++17 globally as all examples require it
