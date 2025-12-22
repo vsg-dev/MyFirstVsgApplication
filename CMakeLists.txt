@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.10)
 
 project(MyFirstVsgApplication
         VERSION 0.0.0
@@ -19,13 +19,10 @@ if (VULKAN_SDK)
     set(ENV{VULKAN_SDK} ${VULKAN_SDK})
 endif()
 
-find_package(vsg 1.0.0 REQUIRED)
+find_package(vsg 1.1.13 REQUIRED)
 
 # find the optional vsgXchange that can be used for reading a range of image and 3d model formats and shader compilation
-find_package(vsgXchange 1.0.0 QUIET)
-
-# set the use of C++17 globally as all examples require it
-set(CMAKE_CXX_STANDARD 17)
+find_package(vsgXchange 1.1.9 QUIET)
 
 # add clobber build target to clear all the non git registered files/directories
 add_custom_target(clobber
